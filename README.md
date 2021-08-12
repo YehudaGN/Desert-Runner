@@ -34,7 +34,11 @@ and of course the game itself.
 
 ![js_wireframe](https://user-images.githubusercontent.com/84539591/129268515-51c80aeb-0f6a-4e01-bd8c-9d1f13298370.png)
 
-<h1>4. Implementation Timeline</h1>
+<h1>4. Technologies</h1>
+
+I plan on using canvas with no additional API's
+
+<h1>5. Implementation Timeline</h1>
 
 Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and how to implement my ideas
 
@@ -46,9 +50,7 @@ Wednesday - 8/18/21 - I will have added functionality to choosing characters as 
 
 Thursday Morning - 8/19/21 - The final polishing will be done.
 
-<h1>5. Technologies</h1>
 
-I plan on using canvas with no additional API's
 
 
 

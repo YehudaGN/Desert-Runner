@@ -18,7 +18,7 @@ In Endless Runner (working title), users will be able to:
 
 Start a new game / reset a run
 Jump to avoid obstacles or jump over gaps
-Duck under obstracles 
+Duck under obstacles 
 Attempt to get a high score 
 
 In addition, the following is included:

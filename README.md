@@ -32,4 +32,18 @@ The screen has a restart button, a How to Play, a difficulty
 indicator, a charactor selector, as well as links to the repo
 and of course the game itself.
 
-<img src="./assests/js_wireframe.png"/>
+![js_wireframe](https://user-images.githubusercontent.com/84539591/129268515-51c80aeb-0f6a-4e01-bd8c-9d1f13298370.png)
+
+4. Implementation Timeline
+
+Friday Afternoon & Weekend - I will have a clear plan on what I need to do and how to implement my ideas
+
+Monday - I will have a framework up and running.
+
+Tuesday - I will have a working skeleton with proper game logic.
+
+Wednesday - I will have added functionality to choosing characters as well as done some css to display the page nicely
+
+Thursday Morning - The final polishing will be done.
+
+

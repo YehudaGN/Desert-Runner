@@ -1,4 +1,4 @@
-1. Background and Overview
+<h1>1. Background and Overview</h1>
 
 In this game, the player will be running from left to right
 along the screen. There will be obstacles to jump over or 
@@ -12,7 +12,7 @@ dynamically as the game goes on. There is also a difficulty
 indicator that displays the current difficulty as the game 
 goes on. 
 
-2. Functionality and MVPs
+<h1>2. Functionality and MVPs</h1>
 
 In Endless Runner (working title), users will be able to:
 
@@ -26,7 +26,7 @@ In addition, the following is included:
 A "How to Play" instructions modal explaining the rules of the game
 A production README
 
-3. Wireframes
+<h1>3. Wireframes</h1>
 
 The screen has a restart button, a How to Play, a difficulty
 indicator, a charactor selector, as well as links to the repo
@@ -34,16 +34,21 @@ and of course the game itself.
 
 ![js_wireframe](https://user-images.githubusercontent.com/84539591/129268515-51c80aeb-0f6a-4e01-bd8c-9d1f13298370.png)
 
-4. Implementation Timeline
+<h1>4. Implementation Timeline</h1>
 
-Friday Afternoon & Weekend - I will have a clear plan on what I need to do and how to implement my ideas
+Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and how to implement my ideas
 
-Monday - I will have a framework up and running.
+Monday - 8/16/21 - I will have a framework up and running.
 
-Tuesday - I will have a working skeleton with proper game logic.
+Tuesday - 8/17/21 - I will have a working skeleton with proper game logic.
 
-Wednesday - I will have added functionality to choosing characters as well as done some css to display the page nicely
+Wednesday - 8/18/21 - I will have added functionality to choosing characters as well as done some css to display the page nicely
 
-Thursday Morning - The final polishing will be done.
+Thursday Morning - 8/19/21 - The final polishing will be done.
+
+<h1>5. Technologies</h1>
+
+I plan on using canvas with no additional API's
+
 
 

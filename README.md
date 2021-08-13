@@ -46,11 +46,11 @@ I plan on using canvas with no additional API's
 
 Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and will have a frame work up and running
 
-Monday - 8/16/21 - I will have a working skeleton with proper game logic.
+Monday - 8/16/21 - I will have a working skeleton with movement, collision, and game over.
 
 Tuesday - 8/17/21 - I will have added dynamic difficulty as well as added functionality to choosing characters
 
-Wednesday - 8/18/21 - I will have  done some css to display the page nicely
+Wednesday - 8/18/21 - I will have added nav links, Instructions, and hunting down potential game breaking bugs
 
 Thursday Morning - 8/19/21 - The final polishing will be done.
 

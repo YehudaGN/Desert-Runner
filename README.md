@@ -28,6 +28,7 @@ Jump or duck to avoid obstacles or gaps
 In addition, the following is included:
 
 A "How to Play" instructions modal explaining the rules of the game
+
 A production README
 
 <h1>3. Wireframes</h1>

@@ -44,7 +44,7 @@ I plan on using canvas with no additional API's
 
 <h1>5. Implementation Timeline</h1>
 
-Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and will have a frame work up and running
+Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and will have a player on the screen as well as jump and duck functionality.
 
 Monday - 8/16/21 - I will have a working skeleton with movement, collision, and game over.
 

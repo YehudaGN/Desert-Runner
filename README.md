@@ -28,9 +28,9 @@ In Desert Runner, users will be able to:
 
 In addition, the following is included:
 
-A "How to Play" instructions modal explaining the rules of the game
+- A "How to Play" instructions modal explaining the rules of the game
 
-A production README
+- A production README
 
 <h1>3. Wireframes</h1>
 
@@ -60,9 +60,9 @@ Thursday Morning - 8/19/21 - The final polishing will be done.
 
 Bonus features include: 
 
-Implementing random terrain generation
+- Implementing random terrain generation
 
-Calculating the increase in difficulty with regards to platforms at different heights so that it will still be playable.
+- Calculating the increase in difficulty with regards to platforms at different heights so that it will still be playable.
 
 
 

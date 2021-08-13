@@ -14,14 +14,15 @@ goes on.
 
 <h1>2. Functionality and MVPs</h1>
 
-
-Desert Runner has environment collision with obstacles.
-
 In Desert Runner, users will be able to:
 
-Start a new game / reset a run
+- Collide with obstacles which ends the game.
 
-Jump or duck to avoid obstacles or gaps
+- Avoid randomly generated obstacles which appear at the edge of the screen and move towards the player.
+
+- Start a new game / reset a run
+
+- Jump or duck to avoid obstacles or gaps
 
  
 

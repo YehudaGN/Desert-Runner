@@ -14,20 +14,27 @@ goes on.
 
 <h1>2. Functionality and MVPs</h1>
 
-In Endless Runner (working title), users will be able to:
+
+Desert Runner has environment collision with obstacles.
+
+In Desert Runner, users will be able to:
 
 Start a new game / reset a run
 
-Jump to avoid obstacles or jump over gaps
+Jump or duck to avoid obstacles or gaps
 
-Duck under obstacles 
-
-Attempt to get a high score 
+ 
 
 In addition, the following is included:
 
 A "How to Play" instructions modal explaining the rules of the game
 A production README
+
+Strech goals include: 
+
+Implementing random terrain generation
+
+Calculating the increase in difficulty with regards to platforms at different heights so that it will still be playable.
 
 <h1>3. Wireframes</h1>
 
@@ -43,13 +50,13 @@ I plan on using canvas with no additional API's
 
 <h1>5. Implementation Timeline</h1>
 
-Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and how to implement my ideas
+Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need to do and will have a frame work up and running
 
-Monday - 8/16/21 - I will have a framework up and running.
+Monday - 8/16/21 - I will have a working skeleton with proper game logic.
 
-Tuesday - 8/17/21 - I will have a working skeleton with proper game logic.
+Tuesday - 8/17/21 - I will have added dynamic difficulty as well as added functionality to choosing characters
 
-Wednesday - 8/18/21 - I will have added functionality to choosing characters as well as done some css to display the page nicely
+Wednesday - 8/18/21 - I will have  done some css to display the page nicely
 
 Thursday Morning - 8/19/21 - The final polishing will be done.
 

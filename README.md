@@ -4,7 +4,7 @@ In this game, the player will be running from left to right
 along the screen. There will be obstacles to jump over or 
 duck under, as well as gaps to jump across to other platforms.
 
-There is list of instructions as well as the option 
+There is a list of instructions as well as the option 
 to choose which character to play as. There is a scoring 
 system that displays after death and determines how well
 you did on any individual run. The games difficulty increases

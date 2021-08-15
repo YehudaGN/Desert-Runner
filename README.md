@@ -50,7 +50,7 @@ Friday Afternoon & Weekend  8/15/21 -- I will have a clear plan on what I need t
 
 Monday - 8/16/21 - I will have a working skeleton with movement, collision, and game over.
 
-Tuesday - 8/17/21 - I will have added dynamic difficulty as well as added functionality to choosing characters
+Tuesday - 8/17/21 - I will have added dynamic difficulty, randomly appearing obstacles and platforms, as well as added functionality to choosing characters
 
 Wednesday - 8/18/21 - I will have added nav links, Instructions, and hunting down potential game breaking bugs
 

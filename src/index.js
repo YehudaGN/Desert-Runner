@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
         sceneCTX.drawImage(background, 0, 0, 1280, 800);
     }
 
+    // const playerIdle = new Image();
+    // playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
+
+    // playerIdle.onload = () => {
+    //     // debugger
+    //     ctx.drawImage(playerIdle, 20, 800, 50, 75)
+    // }
+    
+
     const g = new Game(ctx, canvas);
 
     g.Start();

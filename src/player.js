@@ -10,12 +10,14 @@ document.addEventListener('keydown', function (e) {
 
 let gravity = 1;
 class Player {
-    constructor (x, y, width, height, sprite, ctx) {
+    // constructor (x, y, width, height, sprite, ctx) {
+    constructor (x, y, width, height, color, ctx) {
       this.x = x;
       this.y = y;
       this.width = width;
       this.height = height;
-      this.sprite = sprite;
+      // this.sprite = sprite;
+      this.color = color;
 
       this.ctx = ctx;
   
@@ -23,27 +25,27 @@ class Player {
       this.jumpPower = 15;
       this.originalHeight = height;
       this.jumping = true;
-      this.jumpTimer = 0;
+      this.jumpLength = 0;
     }
   
     animate () {
-      // Jump
+      // jump
       if (keys['ArrowUp']) {
         this.jump();
       } else {
-        this.jumpTimer = 0;
+        this.jumpLength = 0;
       }
   
       if (keys['ArrowDown']) {
-        this.height = this.originalHeight / 2;
+         this.duck();
       } else {
         this.height = this.originalHeight;
       }
   
       this.y += this.yDir;
   
-      // Gravity
-      if (this.y + this.height < canvas.height) {
+      // gravity
+      if ((this.y + this.height) < canvas.height) {
         this.yDir += gravity;
         this.jumping = true;
       } else {
@@ -51,30 +53,37 @@ class Player {
         this.jumping = false;
         this.y = canvas.height - this.height;
       }
-  
+      // debugger
       this.draw();
+    }
+
+    duck () {
+      this.height = this.originalHeight / 2;
+      // add sprites!!
     }
   
     jump () {
-      if (!this.jumping && this.jumpTimer == 0) {
-        this.jumpTimer = 1;
+      if (!this.jumping && (this.jumpLength === 0)) {
+        this.jumpLength = 1;
         this.yDir = -this.jumpPower;
-      } else if (this.jumpTimer > 0 && this.jumpTimer < 15) {
-        this.jumpTimer++;
-        this.yDir = -this.jumpPower - (this.jumpTimer / 50);
+      } else if ((this.jumpLength > 0) && (this.jumpLength < 15)) {
+        this.jumpLength++;
+        // this.yDir = -this.jumpPower - (this.jumpLength / 50);
+        this.yDir = -this.jumpPower;
       }
     }
   
     draw () {
-    //   this.ctx.beginPath();
-    //   this.ctx.fillStyle = this.color;
-    //   this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    //   this.ctx.closePath();
-        let that = this;
-        this.sprite.onload = () => {
-            // debugger
-            that.ctx.drawImage(that.sprite, this.x, this.y)
-        }
+      // debugger
+      this.ctx.beginPath();
+      this.ctx.fillStyle = this.color;
+      this.ctx.fillRect(this.x, this.y, this.width, this.height);
+      this.ctx.closePath();
+        // let that = this;
+        // this.sprite.onload = () => {
+        //     // debugger
+        //     that.ctx.drawImage(that.sprite, this.x, this.y)
+        // }
     }
   }
 

@@ -11,3 +11,13 @@
   background-size: 1280px, 800px;
   position: absolute;
 }
+
+#game-over {
+  position: absolute;
+  text-align: center;
+  font-size: 50px;
+}
+
+#score-disp {
+  position: absolute;
+}

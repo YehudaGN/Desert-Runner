@@ -22,7 +22,7 @@ class Player {
       this.ctx = ctx;
   
       this.yDir = 0;
-      this.jumpPower = 15;
+      this.jumpPower = 10; // increase jump power?
       this.originalHeight = height;
       this.jumping = true;
       this.jumpLength = 0;

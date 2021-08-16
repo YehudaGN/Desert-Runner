@@ -16,7 +16,11 @@ class Player {
       this.y = y;
       this.width = width;
       this.height = height;
-      // this.sprite = sprite;
+
+      const playerIdle = new Image();
+      playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
+
+      this.sprite = playerIdle;
       this.color = color;
 
       this.ctx = ctx;
@@ -26,6 +30,12 @@ class Player {
       this.originalHeight = height;
       this.jumping = true;
       this.jumpLength = 0;
+
+  
+      this.i = 0
+      this.p = 0; // when p goes up a cedrtain amount, i goes up one
+
+      this.ducking = false;
     }
   
     animate () {
@@ -37,8 +47,11 @@ class Player {
       }
   
       if (keys['ArrowDown']) {
+         this.ducking = true;
          this.duck();
+
       } else {
+        this.ducking = false;
         this.height = this.originalHeight;
       }
   
@@ -49,7 +62,7 @@ class Player {
         this.yDir += gravity;
         this.jumping = true;
       } else {
-        this.yDir = 0;
+        this.yDir = 0; // this could bite me later if i want to set up gaps
         this.jumping = false;
         this.y = canvas.height - this.height;
       }
@@ -61,6 +74,7 @@ class Player {
 
     duck () {
       this.height = this.originalHeight / 2;
+      this.ducking = true;
       // add sprites!!
     }
   
@@ -76,17 +90,26 @@ class Player {
     }
   
     draw () {
-      // debugger
-      this.ctx.beginPath();
-      this.ctx.fillStyle = this.color;
-      this.ctx.fillRect(this.x, this.y, this.width, this.height);
-      this.ctx.closePath();
-        // let that = this;
-        // this.sprite.onload = () => {
-        //     // debugger
-        //     that.ctx.drawImage(that.sprite, this.x, this.y)
-        // }
+      // let i = 0;
+      // i++
+      if (this.i > 9) this.i = 0;
+      // for a male character --- will need to change logic when implementing multiple chars.
+      if (!this.ducking) {
+        this.sprite.src = `./src/assets/Sprites/male/Run__00${this.i}.png`;
+      } else {
+        this.sprite.src = `./src/assets/Sprites/male/Slide__00${this.i}.png`;
+      }
+
+      this.ctx.drawImage(this.sprite, this.x, this.y, this.width, this.height)   
+      
+      if (this.p % 3 === 0) {
+        this.i++
+      }
+      this.p++
+      // console.log(i);
     }
   }
 
 export default Player;
+
+

@@ -1,8 +1,8 @@
 import Player from "./player.js";
 import Obstacle from "./obstacle.js";
-
-const playerIdle = new Image();
-playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
+import Bush from "./bush.js"
+// const playerIdle = new Image();
+// playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
 
 let originalSpawnTimer = 200;
 let spawnTimer = originalSpawnTimer;
@@ -30,8 +30,9 @@ class Game {
         let size = this.randomInt(20, 65); // obs are squares, ill adjust when sprites are added
         let type = this.randomInt(0, 1);
         let obstacle = new Obstacle(canvas.width + size, canvas.height - size, size, size, 'red', this.ctx, this.gameSpeed);
+        // let obstacle = new Bush(canvas.width + size, canvas.height - size, this.ctx, this.gameSpeed);
 
-        if (type == 1) {
+        if (type === 1) { // for flying type obs
             obstacle.y -= (player.originalHeight / 2) + 5;
         }
         obstacles.push(obstacle); // eventually my array will pre exist with predefined sizes and images so well just iterate rather than push
@@ -43,7 +44,7 @@ class Game {
         return Math.round(Math.random() * max) + min;
     }
 
-    Start () {
+    start () {
         // debugger
         canvas.width = 1280;
         canvas.height = 800;
@@ -53,15 +54,25 @@ class Game {
       
         this.update(player);
       }
+
+      endGame () {
+          let gameOverText = document.getElementById("game-over");
+          gameOverText.innerText = "GAME OVER";
+
+        //   return
+
+      }
     
 
     update (player) {
         // debugger
         if (this.gameOver) {
-            let gameOverText = document.getElementById("game-over");
-            gameOverText.innerText = "GAME OVER"
+            // let gameOverText = document.getElementById("game-over");
+            // gameOverText.innerText = "GAME OVER"
     
-            return // i want to build a stop loop function and then build when key pressed, new game starts
+            // return // i want to build a stop loop function and then build when key pressed, new game starts
+            this.endGame()
+            return
         }
         requestAnimationFrame(this.update.bind(this, player));
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -80,6 +91,11 @@ class Game {
         //check collision
         for (let i = 0; i < obstacles.length; i++) {
             let obs = obstacles[i];
+
+            if ((obs.x + obs.width) < 0) {
+                obstacles.splice(i, 1);
+            }
+            // debugger
             
             if ( // not working at the moment
                 player.x < obs.x + obs.width &&
@@ -92,7 +108,7 @@ class Game {
             }
             // debugger
         
-            obs.update();
+            obs.move();
         }
         
         

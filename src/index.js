@@ -21,10 +21,33 @@ document.addEventListener("DOMContentLoaded", ()=> {
     //     // debugger
     //     ctx.drawImage(playerIdle, 20, 800, 50, 75)
     // }
+
+    // let keys = {};
+
+    // document.addEventListener('keydown', function (e) {
+    //     keys[e.code] = true;
+    //   });
+    //   document.addEventListener('keyup', function (e) {
+    //     keys[e.code] = false;
+    //   });
+
+    //   if (keys['Space']) console.log("new game");
+    //   debugger
     
 
-    const g = new Game(ctx, canvas);
+    let g = new Game(ctx, canvas);
+    if (!g.gameOver) {
+        g.start();
+    } 
+    // console.log("start");
+    if (g.gameOver) {
+        console.log("game over bud");
+    }
 
-    g.Start();
+     //something like this might work
+    // if g.gameOver = true, and key[code] = "Space", "ArrowUp", or "ArrowDOwn"
+    // g = new Game, g.start?
+
+    // console.log("games over bud");
 
 })

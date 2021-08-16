@@ -9,9 +9,11 @@ class Obstacle {
       this.gameSpeed = gameSpeed
       this.xDir = -gameSpeed;
       this.ctx = ctx
+
+      this.obstacles = [];
     }
   
-    update () {
+    move () {
       this.x += this.xDir;
       this.xDir = -this.gameSpeed;
       this.draw();
@@ -26,3 +28,7 @@ class Obstacle {
   }
 
   export default Obstacle
+
+
+  /// function thaty randomly selects which obs child to create and send on screen
+  // obs are children of obstacle class

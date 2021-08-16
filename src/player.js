@@ -55,6 +55,8 @@ class Player {
       }
       // debugger
       this.draw();
+
+      // when land from jump, puff of dust
     }
 
     duck () {

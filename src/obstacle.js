@@ -13,8 +13,8 @@ class Obstacle {
   
     update () {
       this.x += this.xDir;
-      this.draw();
       this.xDir = -this.gameSpeed;
+      this.draw();
     }
   
     draw () {

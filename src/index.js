@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
         sceneCTX.drawImage(background, 0, 0, 1280, 800);
     }
 
+    // let bush = new Image()
+    // bush.src = "src/assets/Tiles/png/Objects/Bush_2.png";
+
+    // bush.onload = () => {
+    //     sceneCTX.drawImage(bush, 50, 50, 80, 100) 
+    // }
+
     // const playerIdle = new Image();
     // playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
 

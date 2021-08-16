@@ -11,7 +11,7 @@ document.addEventListener('keydown', function (e) {
 let gravity = 1;
 class Player {
     // constructor (x, y, width, height, sprite, ctx) {
-    constructor (x, y, width, height, color, ctx) {
+    constructor (x, y, width, height,ctx) {
       this.x = x;
       this.y = y;
       this.width = width;
@@ -21,17 +21,16 @@ class Player {
       playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
 
       this.sprite = playerIdle;
-      this.color = color;
 
       this.ctx = ctx;
   
       this.yDir = 0;
-      this.jumpPower = 10; // increase jump power?
+      this.jumpPower = 12; // increase jump power?
       this.originalHeight = height;
-      this.jumping = true;
+      this.jumping = false;
       this.jumpLength = 0;
 
-  
+      this.dead = false; // if player dead, play dead animation
       this.i = 0
       this.p = 0; // when p goes up a cedrtain amount, i goes up one
 
@@ -49,6 +48,7 @@ class Player {
       if (keys['ArrowDown']) {
          this.ducking = true;
          this.duck();
+         // maybe increase gravity?
 
       } else {
         this.ducking = false;
@@ -79,7 +79,7 @@ class Player {
     }
   
     jump () {
-      if (!this.jumping && (this.jumpLength === 0)) {
+      if (!this.jumping && (this.jumpLength === 0) && !this.ducking) {
         this.jumpLength = 1;
         this.yDir = -this.jumpPower;
       } else if ((this.jumpLength > 0) && (this.jumpLength < 15)) {

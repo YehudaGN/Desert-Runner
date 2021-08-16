@@ -1,19 +1,16 @@
-import Obstacle from "./obstacle";
-
-// class Bush extends Obstacle {
-class Bush {
+class Cactus {
     constructor (x, y, ctx, gameSpeed) {
         this.x = x;
         this.y = y;
-        this.width = 111;
-        this.height = 64;
+        this.width = 108;
+        this.height = 111;
 
         this.gameSpeed = gameSpeed;
 
         this.xDir = -gameSpeed;
         this.ctx = ctx;
         this.sprite = new Image ();
-        this.sprite.src = "src/assets/Tiles/png/Objects/Bush_2.png";
+        this.sprite.src = "src/assets/Tiles/png/Objects/Cactus_1.png";
         
     }
 
@@ -29,4 +26,4 @@ class Bush {
     }
 }
 
-export default Bush;
+export default Cactus;

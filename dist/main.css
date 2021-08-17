@@ -1,10 +1,99 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, img, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, canvas, header, nav,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+header, nav {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+body {
+  background-image: linear-gradient(#464444, lightgray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  z-index: 3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: #6d6c6c;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#debug {
+  border-radius: 5px;
+  font-size: 35px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: #6d6c6c;
+  background-color: lightgray;
+}
+
+.instructions {
+  position: absolute;
+  text-align: center;
+  left: -75%;
+  width: 500px;
+  color: black;
+  background-color: #bde6ff;
+}
+
+.how-to {
+  position: relative;
+}
+
+.how-to:hover .instructions {
+  display: block;
+}
+
+#Info {
+  position: absolute;
+  text-align: center;
+  left: 56%;
+  color: black;
+  background-color: #bde6ff;
+}
+
+.info:hover #Info {
+  display: block;
+}
+
+header div {
+  font-size: 35px;
+  border: 3px solid lightgray;
+  border-radius: 5px;
+  background-color: lightgray;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
 }
 
 #canvas {
@@ -15,9 +104,58 @@
 #game-over {
   position: absolute;
   text-align: center;
-  font-size: 50px;
+  font-size: 100px;
+  top: 25%;
+  font-family: fantasy;
+  color: red;
+}
+
+#play-again {
+  position: absolute;
+  text-align: center;
+  font-size: 100px;
+  top: 40%;
+  font-family: fantasy;
+  color: black;
 }
 
 #score-disp {
   position: absolute;
+  top: 20%;
+  font-size: 25px;
+  font-family: fantasy;
+}
+
+#title {
+  position: absolute;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.nav-links {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  width: 50%;
+  border: solid 1px black;
+  border-radius: 5px;
+  background-color: #a5a5a8;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #d0d5d6;
+}
+
+#ghImg {
+  border-radius: 5px;
+  padding-top: 2px;
+  height: 40px;
+  width: 40px;
 }

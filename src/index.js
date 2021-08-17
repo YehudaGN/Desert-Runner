@@ -14,47 +14,26 @@ document.addEventListener("DOMContentLoaded", ()=> {
         sceneCTX.drawImage(background, 0, 0, 1280, 800);
     }
 
-    // let bush = new Image()
-    // bush.src = "src/assets/Tiles/png/Objects/Bush_2.png";
+    let keys = {};
+    let debug = document.getElementById("debug");
+    let hitboxes = false;
+    debug.addEventListener('click', function(e) {
+        hitboxes = !hitboxes
+    })
 
-    // bush.onload = () => {
-    //     sceneCTX.drawImage(bush, 50, 50, 80, 100) 
-    // }
-
-    // const playerIdle = new Image();
-    // playerIdle.src = "./src/assets/Sprites/male/Idle__000.png";
-
-    // playerIdle.onload = () => {
-    //     // debugger
-    //     ctx.drawImage(playerIdle, 20, 800, 50, 75)
-    // }
-
-    // let keys = {};
-
-    // document.addEventListener('keydown', function (e) {
-    //     keys[e.code] = true;
-    //   });
-    //   document.addEventListener('keyup', function (e) {
-    //     keys[e.code] = false;
-    //   });
-
-    //   if (keys['Space']) console.log("new game");
-    //   debugger
+    window.addEventListener('keydown', function (e) {
+        keys[e.code] = true;
+    });
+    window.addEventListener('keyup', function (e) {
+        keys[e.code] = false;
+    });
     
-
-    let g = new Game(ctx, canvas);
-    if (!g.gameOver) {
-        g.start();
-    } 
-    // console.log("start");
-    if (g.gameOver) {
-        console.log("game over bud");
-    }
-
-     //something like this might work
-    // if g.gameOver = true, and key[code] = "Space", "ArrowUp", or "ArrowDOwn"
-    // g = new Game, g.start?
-
-    // console.log("games over bud");
-
+    window.addEventListener('keydown', function (e) {
+        
+        if (keys["Escape"]) {    
+            let g = new Game(ctx, canvas, hitboxes);
+            g.start(ctx, canvas);
+        }
+    });
 })
+

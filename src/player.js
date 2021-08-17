@@ -10,7 +10,6 @@ document.addEventListener('keydown', function (e) {
 
 let gravity = 1;
 class Player {
-    // constructor (x, y, width, height, sprite, ctx) {
     constructor (x, y, width, height,ctx) {
       this.x = x;
       this.y = y;
@@ -25,33 +24,33 @@ class Player {
       this.ctx = ctx;
   
       this.yDir = 0;
-      this.jumpPower = 12; // increase jump power?
+      this.jumpPower = 12;
       this.originalHeight = height;
       this.jumping = false;
       this.jumpLength = 0;
 
-      this.dead = false; // if player dead, play dead animation
       this.i = 0
-      this.p = 0; // when p goes up a cedrtain amount, i goes up one
+      this.p = 0; // when p goes up a certain amount, i goes up one
 
       this.ducking = false;
     }
   
-    animate () {
+    animate (hitboxes) {
       // jump
-      if (keys['ArrowUp']) {
+      if (keys['Space']) {
         this.jump();
       } else {
         this.jumpLength = 0;
       }
   
-      if (keys['ArrowDown']) {
+      if (keys['ShiftLeft']) {
          this.ducking = true;
+         gravity = 5;
          this.duck();
-         // maybe increase gravity?
 
       } else {
         this.ducking = false;
+        gravity = 1;
         this.height = this.originalHeight;
       }
   
@@ -66,16 +65,15 @@ class Player {
         this.jumping = false;
         this.y = canvas.height - this.height;
       }
-      // debugger
-      this.draw();
+      this.draw(hitboxes);
 
       // when land from jump, puff of dust
     }
 
     duck () {
+      // add limit to slide?
       this.height = this.originalHeight / 2;
       this.ducking = true;
-      // add sprites!!
     }
   
     jump () {
@@ -84,14 +82,11 @@ class Player {
         this.yDir = -this.jumpPower;
       } else if ((this.jumpLength > 0) && (this.jumpLength < 15)) {
         this.jumpLength++;
-        // this.yDir = -this.jumpPower - (this.jumpLength / 50);
         this.yDir = -this.jumpPower;
       }
     }
   
-    draw () {
-      // let i = 0;
-      // i++
+    draw (hitboxes) {
       if (this.i > 9) this.i = 0;
       // for a male character --- will need to change logic when implementing multiple chars.
       if (!this.ducking) {
@@ -106,7 +101,16 @@ class Player {
         this.i++
       }
       this.p++
-      // console.log(i);
+
+      // visualize hitbox
+      if (hitboxes) {
+        this.ctx.beginPath();
+        this.ctx.lineWidth = "1";
+        this.ctx.strokeStyle = "black";
+        this.ctx.rect(this.x, this.y, this.width, this.height);
+        this.ctx.stroke();
+      }
+
     }
   }
 

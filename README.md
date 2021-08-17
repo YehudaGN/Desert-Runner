@@ -66,6 +66,14 @@ Bonus features include:
 
 
 
+#Credits 
+
+-  Logo courtesy of <a id="logo-gen" href="https://www.textstudio.co/" title="TextStudio">Text Studio</a>
+
+- Sprites courtesy of {insert link here}
+
+
+
 
 
 

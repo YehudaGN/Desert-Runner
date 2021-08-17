@@ -14,15 +14,22 @@ class Cactus {
         
     }
 
-    move () {
+    move (hitboxes) {
         this.x += this.xDir;
         this.xDir = -this.gameSpeed;
-        this.draw();
+        this.draw(hitboxes);
       }
 
-    draw () {
-        // debugger
+    draw (hitboxes) {
         this.ctx.drawImage(this.sprite, this.x, this.y, this.width, this.height); 
+   
+        if (hitboxes) {
+            this.ctx.beginPath();
+            this.ctx.lineWidth = "1";
+            this.ctx.strokeStyle = "black";
+            this.ctx.rect(this.x, this.y, this.width, this.height);
+            this.ctx.stroke();
+        }
     }
 }
 

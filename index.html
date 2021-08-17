@@ -8,16 +8,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
+    <link rel="icon" type="image/x-icon" href="./src/assets/nav/cactus-icon.png" />
     <title>Desert Runner</title>
 </head>
 
 <body>
+    <header>
+        <button id="debug">Toggle Debug</button>
+        <div class="how-to">How To Play
+            <div class="instructions" hidden>
+                <br>
+                <p>Use the Spacebar to jump over obstacles</p>
+                <br>
+                <p>Use the LeftShift key to duck under obstacles</p>
+                <br>
+                <p>Press Esc to start the game</p>
+                <br>
+                <p>Click the Toggle Debug button to display hitbox visualization</p>
+                <br>
+                <p>The Difficulty will dynamically increase</p>
+                <br>
+            </div>
+        </div>
+        <div id="difficulty">Difficulty: Easy</div>
+        <div class="info" > Info
+            <div id="Info" hidden>
+                <br>
+                <p>Created by Yehuda Goldschein</p>
+                <br>
+            </div>
+        </div>
+    </header>
+    <img id="title" src="./src/assets/Title/Desert-Runner-8-16-2021.png">
     <div class="wrapper">
         <p id="game-over"></p>
+        <p id="play-again"></p>
         <p id ="score-disp"></p>
+        <!-- <button></button> -->
         <canvas id="canvas" height="800" width="1280"></canvas>
         <canvas id="scene" height="800" width="1280"></canvas>
     </div>
+
+    <nav class="nav-links">
+        
+        <a id="github" href="https://github.com/yudagn/Desert-Runner" title="TextStudio">
+            <img id="ghImg" src="./src/assets/nav/github.png" alt="">
+        </a>
+    </nav>
+   
+
 </body>
 
 </html>

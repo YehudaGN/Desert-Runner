@@ -59,6 +59,20 @@ header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(109, 108, 108);
     background-color: lightgray;
+    cursor: pointer;
+    box-shadow: 0 3px #999;
+}
+
+#debug:hover {
+    background-color:rgb(109, 108, 108);
+    color: lightgray;
+
+}
+
+#debug:active {
+    // background-color: gray;
+    box-shadow: 0 1px;
+    transform: translateY(3px)
 }
 
 .instructions {
@@ -68,6 +82,7 @@ header {
     width: 500px;
     color: black;
     background-color: rgb(189, 230, 255);
+    font-family: fantasy;
 }
 
 .how-to {
@@ -75,6 +90,8 @@ header {
 }
 
 .how-to:hover {
+    background-color: rgb(109, 108, 108);
+    color: lightgray;
     .instructions {
         display: block;
     }
@@ -86,17 +103,21 @@ header {
     left: 56%;
     color: black;
     background-color: rgb(189, 230, 255);
+    font-family: fantasy;
 }
 
 .info:hover {
+    background-color: rgb(109, 108, 108);
+    color: lightgray;
     #Info {
         display: block;
+        
     }
 }
 
 header div{
+  
     font-size: 35px;
-    border: 3px solid lightgray;
     border-radius: 5px;
     background-color: lightgray;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

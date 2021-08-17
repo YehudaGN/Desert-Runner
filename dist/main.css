@@ -52,6 +52,18 @@ header {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   color: #6d6c6c;
   background-color: lightgray;
+  cursor: pointer;
+  box-shadow: 0 3px #999;
+}
+
+#debug:hover {
+  background-color: #6d6c6c;
+  color: lightgray;
+}
+
+#debug:active {
+  box-shadow: 0 1px;
+  transform: translateY(3px);
 }
 
 .instructions {
@@ -61,12 +73,17 @@ header {
   width: 500px;
   color: black;
   background-color: #bde6ff;
+  font-family: fantasy;
 }
 
 .how-to {
   position: relative;
 }
 
+.how-to:hover {
+  background-color: #6d6c6c;
+  color: lightgray;
+}
 .how-to:hover .instructions {
   display: block;
 }
@@ -77,15 +94,19 @@ header {
   left: 56%;
   color: black;
   background-color: #bde6ff;
+  font-family: fantasy;
 }
 
+.info:hover {
+  background-color: #6d6c6c;
+  color: lightgray;
+}
 .info:hover #Info {
   display: block;
 }
 
 header div {
   font-size: 35px;
-  border: 3px solid lightgray;
   border-radius: 5px;
   background-color: lightgray;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;

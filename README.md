@@ -70,7 +70,7 @@ Bonus features include:
 
 -  Logo courtesy of <a id="logo-gen" href="https://www.textstudio.co/" title="TextStudio">Text Studio</a>
 
-- Sprites courtesy of {insert link here}
+- Sprites courtesy of <a id="logo-gen" href="https://www.gameart2d.com/">Gameart2d</a>
 
 
 

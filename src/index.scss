@@ -123,6 +123,8 @@ header button {
   
 }
 
+
+
 #canvas {
     background-size: 1280px, 780px; 
     position: absolute;
@@ -145,6 +147,7 @@ header button {
     top: 28%;
     font-family: fantasy;
     color: red;
+    text-shadow: 4px 4px rgb(122, 101, 101);
 }
 
 #play-again {
@@ -155,6 +158,7 @@ header button {
     top: 42%;
     font-family: fantasy;
     color: black;
+    text-shadow: 4px 4px rgb(110, 110, 110);
 }
 
 #score-disp {
@@ -162,6 +166,7 @@ header button {
     top: 23%;
     font-size: 25px;
     font-family: fantasy;
+    text-shadow: 2px 2px lightskyblue;
 }
 
 #title {

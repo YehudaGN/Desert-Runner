@@ -5,6 +5,9 @@ import Crate from "./crate.js";
 import Tree from "./tree.js";
 import Cactus2 from "./cactus2.js";
 import Bird from "./bird.js";
+import Skeleton from "./skeleton.js";
+import StoneBlock from "./stoneBlock.js";
+import Cactus3 from "./cactus3.js";
 
 let originalSpawnTimer = 200;
 let spawnTimer = originalSpawnTimer;
@@ -36,12 +39,6 @@ class Game {
         this.gameSound = gameSound;
     }
 
-    spawnPlatform () { 
-        // this should call spawnObstacle only after platform is spawned 
-        // so spawn platform outside of canvas, place obs on random x of platform,
-        // maybe spawn flying obs even if no platform?
-    }
-
     spawnObstacle (player) {
         
         let obstacle = this.newObs(player); 
@@ -51,7 +48,7 @@ class Game {
 
     newObs (player) {
         // randomly call class for new obstacle
-        let rand = this.randomInt(1, 5);
+        let rand = this.randomInt(1, 9);
         if (rand === 1) {
             return new Bush(canvas.width + 131, canvas.height - platformHeight - 65 , this.ctx, this.gameSpeed);
         } else if (rand === 2) {
@@ -64,9 +61,14 @@ class Game {
             } else {
                 return new Cactus2(canvas.width + 70, canvas.height - platformHeight - 45, this.ctx, this.gameSpeed);
             }
-        } else if (rand === 5) {
-            // this birds hitbox is wonky
+        } else if (rand === 5 || rand === 9) {
             return new Bird((canvas.width + 146.8), canvas.height - platformHeight - 192 - (player.height / 2), this.ctx, this.gameSpeed);
+        } else if (rand === 6) {
+            return new Skeleton(canvas.width + 120, canvas.height - platformHeight - 51, this.ctx, this.gameSpeed)
+        } else if (rand === 7) {
+            return new StoneBlock(canvas.width + 101, canvas.height - platformHeight - 99, this.ctx, this.gameSpeed)
+        } else if (rand === 8) {
+            return new Cactus3(canvas.width + 86, canvas.height - platformHeight - 96, this.ctx, this.gameSpeed)
         }
     }
 
@@ -90,12 +92,6 @@ class Game {
         
         obstacles = [];
         spawnTimer = originalSpawnTimer;
-
-        // this.highScore = 0;
-
-        // if (localStorage.getItem('highscore')) {
-        //     highscore = localStorage.getItem('highscore');
-        // }
        
         let player;
         if (this.character) {
@@ -115,9 +111,6 @@ class Game {
         let playAgain = document.getElementById("play-again")
         playAgain.innerText = "Click Restart"
 
-        // let start = document.createElement("button")
-        // start.innerText = "Restart"
-        // start.appendChild('header')
 
         let start = document.getElementById("start")
         start.innerText = "Restart"
@@ -156,8 +149,6 @@ class Game {
         }
 
         requestAnimationFrame(this.update.bind(this, player));
-
-        console.log(this.gameSpeed); // debug restart error then remove
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -205,7 +196,7 @@ class Game {
 
                 if ( obs instanceof Bird &&
                     player.x < (obs.x + obs.width)  &&
-                    (player.x + player.width) - 10 > obs.x && // generous hitbox
+                    (player.x + player.width) - 10 > obs.x && 
                     (player.y) < obs.y + obs.height - 45  &&
                    (player.y + player.height) > obs.y 
                   ) {

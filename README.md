@@ -74,6 +74,12 @@ Bonus features include:
 
 - Music courtesy of <a href="https://www.epidemicsound.com/">EpidemicSound</a>
 
+#Special Thanks to:
+
+- <a href="https://github.com/omarluq">Omar Luqman</a> for his invaluable insight into my project
+
+- <a href="https://github.com/rzleu">Richard Leung</a> for his advice in CSS
+
 
 
 

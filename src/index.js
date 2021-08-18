@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     platform.src = "./src/assets/Tiles/png/Tile/platform.png"
 
     background.onload = () => {
-        sceneCTX.drawImage(background, 0, 0, 1280, 800);
+        sceneCTX.drawImage(background, 0, 0, canvas.width, canvas.height);
     }
 
     platform.onload = () => {
-        sceneCTX.drawImage(platform, 0, canvas.height - 93, 1280, 93 )
+        sceneCTX.drawImage(platform, 0, canvas.height - 93, canvas.width, 93 )
     }
 
 

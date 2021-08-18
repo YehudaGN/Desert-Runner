@@ -26,7 +26,7 @@ class Crate {
         if (hitboxes) {
             this.ctx.beginPath();
             this.ctx.lineWidth = "1";
-            this.ctx.strokeStyle = "red";
+            this.ctx.strokeStyle = "black";
             this.ctx.rect(this.x, this.y, this.width, this.height);
             this.ctx.stroke();
         }

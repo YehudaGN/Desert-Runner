@@ -10,8 +10,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const background = new Image();
     background.src = "./src/assets/Tiles/png/BG.png";
 
+    const platform = new Image();
+    platform.src = "./src/assets/Tiles/png/Tile/platform.png"
+
     background.onload = () => {
         sceneCTX.drawImage(background, 0, 0, 1280, 800);
+    }
+
+    platform.onload = () => {
+        sceneCTX.drawImage(platform, 0, canvas.height - 93, 1280, 93 )
     }
 
     let keys = {};
@@ -19,6 +26,19 @@ document.addEventListener("DOMContentLoaded", ()=> {
     let hitboxes = false;
     debug.addEventListener('click', function(e) {
         hitboxes = !hitboxes
+    })
+
+
+    let male = document.getElementById("male");
+    let female = document.getElementById("female");
+    let character = 0;
+
+    male.addEventListener('click', function(e) {
+        character = 0;
+    })
+
+    female.addEventListener('click', function(e) {
+        character = 1;
     })
 
     window.addEventListener('keydown', function (e) {
@@ -31,7 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     window.addEventListener('keydown', function (e) {
         
         if (keys["Escape"]) {    
-            let g = new Game(ctx, canvas, hitboxes);
+            let g = new Game(ctx, canvas, hitboxes, character);
             g.start(ctx, canvas);
         }
     });

@@ -1,5 +1,6 @@
 
 let keys = {};
+let platformHeight = 93;
 
 document.addEventListener('keydown', function (e) {
     keys[e.code] = true;
@@ -35,7 +36,7 @@ class Player {
       this.ducking = false;
     }
   
-    animate (hitboxes) {
+    animate (hitboxes, character) {
       // jump
       if (keys['Space']) {
         this.jump();
@@ -57,22 +58,22 @@ class Player {
       this.y += this.yDir;
   
       // gravity
-      if ((this.y + this.height) < canvas.height) {
+      if ((this.y + this.height) < canvas.height - platformHeight ) {
         this.yDir += gravity;
         this.jumping = true;
       } else {
         this.yDir = 0; // this could bite me later if i want to set up gaps
         this.jumping = false;
-        this.y = canvas.height - this.height;
+        this.y = canvas.height - this.height - platformHeight;
       }
-      this.draw(hitboxes);
+      this.draw(hitboxes, character);
 
       // when land from jump, puff of dust
     }
 
     duck () {
       // add limit to slide?
-      this.height = this.originalHeight / 2;
+      this.height = this.originalHeight / 1.5;
       this.ducking = true;
     }
   
@@ -86,13 +87,26 @@ class Player {
       }
     }
   
-    draw (hitboxes) {
-      if (this.i > 9) this.i = 0;
+    draw (hitboxes, character) {
+      
       // for a male character --- will need to change logic when implementing multiple chars.
-      if (!this.ducking) {
-        this.sprite.src = `./src/assets/Sprites/male/Run__00${this.i}.png`;
+      if (character === 0) {  
+        if (this.i > 9) this.i = 0;
+
+        if (!this.ducking) {
+          this.sprite.src = `./src/assets/Sprites/male/Run__00${this.i}.png`;
+        } else {
+          this.sprite.src = `./src/assets/Sprites/male/Slide__00${this.i}.png`;
+        }
       } else {
-        this.sprite.src = `./src/assets/Sprites/male/Slide__00${this.i}.png`;
+        if (this.i > 7) this.i = 0;
+        if (!this.ducking) {
+          this.sprite.src = `./src/assets/Sprites/female/png/Run__00${this.i}.png`;
+                              // /src/assets/Sprites/female/png/Run__000.png
+        } else {
+          if (this.i > 4) this.i = 0;
+          this.sprite.src = `./src/assets/Sprites/female/png/Slide__00${this.i}.png`;
+        }
       }
 
       this.ctx.drawImage(this.sprite, this.x, this.y, this.width, this.height)   
@@ -103,7 +117,16 @@ class Player {
       this.p++
 
       // visualize hitbox
-      if (hitboxes) {
+      // debugger
+      if (hitboxes && character) {
+        // debugger
+        this.ctx.beginPath();
+        this.ctx.lineWidth = "1";
+        this.ctx.strokeStyle = "black";
+        // debugger
+        this.ctx.rect(this.x + 15, this.y, this.width - 30, this.height);
+        this.ctx.stroke();
+      } else if (hitboxes && !character){
         this.ctx.beginPath();
         this.ctx.lineWidth = "1";
         this.ctx.strokeStyle = "black";

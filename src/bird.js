@@ -51,7 +51,7 @@ class Bird {
             this.ctx.beginPath();
             this.ctx.lineWidth = "1";
             this.ctx.strokeStyle = "black";
-            this.ctx.rect(this.x, this.y, this.width, this.height - 45);
+            this.ctx.rect(this.x, this.y + 15, this.width, this.height - 45);
             this.ctx.stroke();
         }
 

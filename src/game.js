@@ -10,10 +10,11 @@ import Bird from "./bird.js";
 let originalSpawnTimer = 200;
 let spawnTimer = originalSpawnTimer;
 let obstacles = [];
+let platformHeight = 93;
 
 
 class Game {
-    constructor (ctx, canvas, hitboxes) {
+    constructor (ctx, canvas, hitboxes, character) {
         this.ctx = ctx;
         this.canvas = canvas; 
 
@@ -25,6 +26,8 @@ class Game {
         this.highScore = 0;
         
         this.hitboxes = hitboxes;
+
+        this.character = character;
     }
 
     spawnPlatform () { 
@@ -44,20 +47,20 @@ class Game {
         // randomly call class for new obstacle
         let rand = this.randomInt(1, 5);
         if (rand === 1) {
-            return new Bush(canvas.width + 131, canvas.height - 65, this.ctx, this.gameSpeed);
+            return new Bush(canvas.width + 131, canvas.height - platformHeight - 65 , this.ctx, this.gameSpeed);
         } else if (rand === 2) {
-            return new Cactus(canvas.width + 88, canvas.height - 91, this.ctx, this.gameSpeed);
+            return new Cactus(canvas.width + 88, canvas.height - platformHeight - 105, this.ctx, this.gameSpeed);
         } else if (rand === 3) {
-            return new Crate(canvas.width + 65, canvas.height - 65, this.ctx, this.gameSpeed);
+            return new Crate(canvas.width + 65, canvas.height - platformHeight - 65, this.ctx, this.gameSpeed);
         } else if (rand === 4) {
             if (this.gameSpeed >= 15) {
-                return new Tree(canvas.width + 180, canvas.height - 150, this.ctx, this.gameSpeed);
+                return new Tree(canvas.width + 180, canvas.height - platformHeight - 150, this.ctx, this.gameSpeed);
             } else {
-                return new Cactus2(canvas.width + 70, canvas.height - 45, this.ctx, this.gameSpeed);
+                return new Cactus2(canvas.width + 70, canvas.height - platformHeight - 45, this.ctx, this.gameSpeed);
             }
         } else if (rand === 5) {
             // this birds hitbox is wonky
-            return new Bird((canvas.width + 146.8), canvas.height - 192 - (player.height / 2), this.ctx, this.gameSpeed);
+            return new Bird((canvas.width + 146.8), canvas.height - platformHeight - 192 - (player.height / 2), this.ctx, this.gameSpeed);
         }
     }
 
@@ -72,8 +75,8 @@ class Game {
 
         this.ctx = ctx;
         this.canvas = canvas;
-        ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+        // ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        // debugger
         this.gameSpeed = 5;
         this.gameOver = false;
         this.score = 0;
@@ -84,11 +87,17 @@ class Game {
         // if (localStorage.getItem('highscore')) {
         //     highscore = localStorage.getItem('highscore');
         // }
-
-        canvas.width = 1280;
-        canvas.height = 800;
-        let player = new Player(100, 0, 75, 100, this.ctx);
-      
+        
+        // canvas.width = 1280; // pretty sure this isnt needed
+        // canvas.height = 800;
+       
+        let player;
+        if (this.character) {
+             player = new Player(100, 0, 110, 100, this.ctx);
+        } else {
+             player = new Player(100, 0, 75, 100, this.ctx);
+        }
+       
         this.update(player);
        
     }
@@ -107,6 +116,7 @@ class Game {
             this.endGame()
             return 
         }
+        
         let gameOverText = document.getElementById("game-over");
         gameOverText.innerText = '';
 
@@ -129,7 +139,7 @@ class Game {
 
         requestAnimationFrame(this.update.bind(this, player));
 
-        console.log(this.gameSpeed);
+        console.log(this.gameSpeed); // debug restart error then remove
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -153,23 +163,49 @@ class Game {
                 obstacles.splice(i, 1);
             }
          
-            if ( obs instanceof Bird &&
-                player.x < (obs.x + obs.width)  &&
-                (player.x + player.width) - 10 > obs.x && // generous hitbox
-                (player.y) < obs.y + obs.height - 45  &&
-               (player.y + player.height) > obs.y 
-              ) {
+            if (this.character) {
 
-                this.gameOver = true;
-
-            } else if ( !(obs instanceof Bird) &&
-                player.x < (obs.x + obs.width) &&
-                (player.x + player.width) - 10 > obs.x && 
-                player.y < obs.y + obs.height &&
-                (player.y + player.height) > obs.y) {
-          
+                if ( obs instanceof Bird &&
+                    player.x < (obs.x + obs.width)  &&
+                    (player.x + player.width) - 40 > obs.x && // generous hitbox
+                    (player.y) < obs.y + obs.height - 45  &&
+                   (player.y + player.height) > obs.y 
+                  ) {
+    
                     this.gameOver = true;
+    
+                } else if ( !(obs instanceof Bird) &&
+                    player.x < (obs.x + obs.width) &&
+                    (player.x + 15 + player.width) - 40 > obs.x && 
+                    player.y < obs.y + 15 + obs.height &&
+                    (player.y + player.height) > obs.y) {
+              
+                        this.gameOver = true;
+                }
+
+            } else {
+
+                if ( obs instanceof Bird &&
+                    player.x < (obs.x + obs.width)  &&
+                    (player.x + player.width) - 10 > obs.x && // generous hitbox
+                    (player.y) < obs.y + obs.height - 45  &&
+                   (player.y + player.height) > obs.y 
+                  ) {
+    
+                    this.gameOver = true;
+    
+                } else if ( !(obs instanceof Bird) &&
+                    player.x < (obs.x + obs.width) &&
+                    (player.x + player.width) - 10 > obs.x && 
+                    player.y < obs.y + 15  + obs.height &&
+                    (player.y + player.height) > obs.y) {
+              
+                        this.gameOver = true;
+                }
+
             }
+
+            
 
 
 
@@ -178,7 +214,7 @@ class Game {
         }
         
         
-        player.animate(this.hitboxes);
+        player.animate(this.hitboxes, this.character);
 
         let scoreDisplay = document.getElementById("score-disp")
         this.score++;

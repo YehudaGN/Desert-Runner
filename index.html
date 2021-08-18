@@ -14,7 +14,16 @@
 
 <body>
     <header>
-        <button id="debug">Toggle Debug</button>
+        <div id="chars"> Character Select: </div>
+            <button id="male">
+                <img src="./src/assets/Sprites/male/Idle__000.png" alt="">
+            </button> 
+            <button id="female">
+                <img src="./src/assets/Sprites/female/png/Idle (1).png" alt="">
+            </button>
+        
+
+        <button id="debug">Toggle Hitboxes</button>
         <div class="how-to">How To Play
             <div class="instructions" hidden>
                 <br>
@@ -26,7 +35,7 @@
                 <br>
                 <p>Press Esc to start the game</p>
                 <br>
-                <p>Click the Toggle Debug button to display hitbox visualization</p>
+                <p>Click the Toggle Hitboxes button to display hitbox visualization</p>
                 <br>
                 <p>The Difficulty will dynamically increase</p>
                 <br>
@@ -47,7 +56,6 @@
         <p id="game-over"></p>
         <p id="play-again"></p>
         <p id ="score-disp"></p>
-        <!-- <button></button> -->
         <canvas id="canvas" height="800" width="1280"></canvas>
         <canvas id="scene" height="800" width="1280"></canvas>
     </div>

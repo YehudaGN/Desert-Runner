@@ -133,7 +133,13 @@ header div{
     background-size: 1280px, 800px;
     // border: solid 1px black;
     position: absolute;
+    // border-radius: px;
 
+}
+
+#scene {
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px 8px darkgray;
 }
 
 
@@ -197,4 +203,43 @@ a:hover {
     padding-top: 2px;
     height: 40px;
     width: 40px;
+}
+
+#male img{
+    width: 50px;
+    height: 50px;
+}
+
+#female img{
+    
+    width: 100px;
+    height: 50px;
+}
+
+#female, #male {
+    // display: flex;
+    width: 70px;
+    height: 60px;
+}
+
+header button {
+    border-radius: 5px;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(109, 108, 108);
+    background-color: lightgray;
+    cursor: pointer;
+    box-shadow: 0 3px #999;
+}
+
+header button:hover {
+    background-color:rgb(109, 108, 108);
+    color: lightgray;
+
+}
+
+header button:active {
+    // background-color: gray;
+    box-shadow: 0 1px;
+    transform: translateY(3px)
 }

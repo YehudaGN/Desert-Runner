@@ -72,6 +72,8 @@ Bonus features include:
 
 - Sprites courtesy of <a id="logo-gen" href="https://www.gameart2d.com/">Gameart2d</a>
 
+- Music courtesy of <a href="https://www.epidemicsound.com/">EpidemicSound</a>
+
 
 
 

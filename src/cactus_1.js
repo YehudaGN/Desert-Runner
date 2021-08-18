@@ -2,8 +2,8 @@ class Cactus {
     constructor (x, y, ctx, gameSpeed) {
         this.x = x;
         this.y = y;
-        this.width = 100;
-        this.height = 105;
+        this.width = 90;
+        this.height = 95;
 
         this.gameSpeed = gameSpeed;
 

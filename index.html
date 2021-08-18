@@ -13,36 +13,35 @@
 </head>
 
 <body>
+    
     <header>
-        <div id="chars"> Character Select: </div>
-            <button id="male">
-                <img src="./src/assets/Sprites/male/Idle__000.png" alt="">
-            </button> 
-            <button id="female">
-                <img src="./src/assets/Sprites/female/png/Idle (1).png" alt="">
-            </button>
+        <button id="start" class="display">Start</button>
+        <button id="sound"><img id="volume" src="src/assets/volume/mute-icon.png" alt=""></button>
         
-
         <button id="debug">Toggle Hitboxes</button>
-        <div class="how-to">How To Play
+        <div class="how-to" class="header-text">How To Play
             <div class="instructions" hidden>
                 <br>
-                <p>Use the Spacebar to jump over obstacles</p>
+                <p>Use the Spacebar or ArrowUp to jump over obstacles</p>
                 <br>
-                <p>Use the LeftShift key to duck under obstacles</p>
+                <p>Use LeftShift or ArrowDown to duck under obstacles</p>
                 <br>
                 <p>Ducking in midair will cause the player to land quicker</p>
                 <br>
-                <p>Press Esc to start the game</p>
+                <p>Click Start to begin the game</p>
+                <br>
+                <p>Click a character button to select that character</p>
                 <br>
                 <p>Click the Toggle Hitboxes button to display hitbox visualization</p>
                 <br>
                 <p>The Difficulty will dynamically increase</p>
                 <br>
+                <p>Make your selections before starting the game</p>
+                <br>
             </div>
         </div>
-        <div id="difficulty">Difficulty: Easy</div>
-        <div class="info" > Info
+        <div id="difficulty" class="header-text">Difficulty: Easy</div>
+        <div class="info"  class="header-text"> Info
             <div id="Info" hidden>
                 <br>
                 <p>Created by Yehuda Goldschein</p>
@@ -52,18 +51,40 @@
         </div>
     </header>
     <img id="title" src="./src/assets/Title/Desert-Runner-8-16-2021.png">
+
+
+    
+
+
     <div class="wrapper">
         <p id="game-over"></p>
         <p id="play-again"></p>
         <p id ="score-disp"></p>
-        <canvas id="canvas" height="800" width="1280"></canvas>
-        <canvas id="scene" height="800" width="1280"></canvas>
+
+            
+            <div id="char-select">
+                <div id="chars" class="header-text">Select:</div>
+                <button id="male">
+                    <img src="./src/assets/Sprites/male/Idle__000.png" alt="">
+                </button> 
+                <button id="female">
+                    <img src="./src/assets/Sprites/female/png/Idle (1).png" alt="">
+                </button>
+            </div>
+
+
+        <canvas id="canvas" height="780" width="1280"></canvas>
+        <canvas id="scene" height="780" width="1280"></canvas>
     </div>
 
     <nav class="nav-links">
         
         <a id="github" href="https://github.com/yudagn/Desert-Runner" title="TextStudio">
-            <img id="ghImg" src="./src/assets/nav/github.png" alt="">
+            <img id="ghImg" src="./src/assets/nav/github.png">
+        </a>
+
+        <a href="https://www.linkedin.com/in/yehuda-goldschein-79872199/">
+            <img id="linked-in"src="./src/assets/nav/Linkedin-logo-on-transparent--background-PNG.png">
         </a>
     </nav>
    

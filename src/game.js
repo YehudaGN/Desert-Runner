@@ -1,5 +1,4 @@
 import Player from "./player.js";
-import Obstacle from "./obstacle.js";
 import Bush from "./bush.js";
 import Cactus from "./cactus_1.js";
 import Crate from "./crate.js";
@@ -14,7 +13,7 @@ let platformHeight = 93;
 
 
 class Game {
-    constructor (ctx, canvas, hitboxes, character) {
+    constructor (ctx, canvas, hitboxes, character, gameSound) {
         this.ctx = ctx;
         this.canvas = canvas; 
 
@@ -28,6 +27,13 @@ class Game {
         this.hitboxes = hitboxes;
 
         this.character = character;
+
+        this.music = new Audio("./src/assets/audio/ES_Alleyways of Seoul - Josef Bel Habib.mp3");
+        
+        this.music.loop = true;
+        this.music.volume = .15;
+
+        this.gameSound = gameSound;
     }
 
     spawnPlatform () { 
@@ -49,7 +55,7 @@ class Game {
         if (rand === 1) {
             return new Bush(canvas.width + 131, canvas.height - platformHeight - 65 , this.ctx, this.gameSpeed);
         } else if (rand === 2) {
-            return new Cactus(canvas.width + 88, canvas.height - platformHeight - 105, this.ctx, this.gameSpeed);
+            return new Cactus(canvas.width + 88, canvas.height - platformHeight - 95, this.ctx, this.gameSpeed);
         } else if (rand === 3) {
             return new Crate(canvas.width + 65, canvas.height - platformHeight - 65, this.ctx, this.gameSpeed);
         } else if (rand === 4) {
@@ -71,25 +77,25 @@ class Game {
     }
 
 
-    start (ctx, canvas) {
+    start () {
 
-        this.ctx = ctx;
-        this.canvas = canvas;
-        // ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        // debugger
+        if (this.gameSound) {
+            this.music.play()
+        }
+        
+        
         this.gameSpeed = 5;
         this.gameOver = false;
         this.score = 0;
-        // this.highScore = 0;
+        
         obstacles = [];
         spawnTimer = originalSpawnTimer;
+
+        // this.highScore = 0;
 
         // if (localStorage.getItem('highscore')) {
         //     highscore = localStorage.getItem('highscore');
         // }
-        
-        // canvas.width = 1280; // pretty sure this isnt needed
-        // canvas.height = 800;
        
         let player;
         if (this.character) {
@@ -107,7 +113,19 @@ class Game {
         gameOverText.innerText = "GAME OVER";
         
         let playAgain = document.getElementById("play-again")
-        playAgain.innerText = "Press Esc To Restart"
+        playAgain.innerText = "Click Restart"
+
+        // let start = document.createElement("button")
+        // start.innerText = "Restart"
+        // start.appendChild('header')
+
+        let start = document.getElementById("start")
+        start.innerText = "Restart"
+        start.classList.remove("none")
+
+
+        this.music.pause();
+        this.music.currentTime = 0;
     }
     
 
@@ -129,12 +147,12 @@ class Game {
             difficulty.innerText = "Difficulty: Easy"
         } else if (this.gameSpeed > 15 && this.gameSpeed < 20) {
             difficulty.innerText = "Difficulty: Medium"
-        } else if (this.gameSpeed > 20 && this.gameSpeed < 25) {
+        } else if (this.gameSpeed > 20 && this.gameSpeed < 30) {
             difficulty.innerText = "Difficulty: Hard"
-        } else if (this.gameSpeed > 25 && this.gameSpeed < 30) {
+        } else if (this.gameSpeed > 30 && this.gameSpeed < 40) {
             difficulty.innerText = "Difficulty: Impossible"
-        } else if (this.gameSpeed > 30) {
-            difficulty.innerText = "Why Are You Still Playing???"
+        } else if (this.gameSpeed > 40) {
+            difficulty.innerText = "Why???"
         }
 
         requestAnimationFrame(this.update.bind(this, player));
@@ -214,7 +232,7 @@ class Game {
         }
         
         
-        player.animate(this.hitboxes, this.character);
+        player.animate(this.hitboxes, this.character, this.gameSound);
 
         let scoreDisplay = document.getElementById("score-disp")
         this.score++;

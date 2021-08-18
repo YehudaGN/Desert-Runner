@@ -14,7 +14,7 @@ goes on.
 
 <h1>2. Functionality and MVPs</h1>
 
-In Desert Runner, users will be able to:
+In Desert Runner, users are able to:
 
 - Collide with obstacles which ends the game.
 
@@ -23,6 +23,10 @@ In Desert Runner, users will be able to:
 - Start a new game / reset a run
 
 - Jump or duck to avoid obstacles or gaps
+
+- Select a character
+
+- Toggle hitbox visualization 
 
  
 
@@ -79,7 +83,6 @@ Bonus features include:
 - <a href="https://github.com/omarluq">Omar Luqman</a> for his invaluable insight into my project
 
 - <a href="https://github.com/rzleu">Richard Leung</a> for his advice in CSS
-
 
 
 

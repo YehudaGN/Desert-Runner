@@ -21,7 +21,7 @@ class Game {
         this.ctx = ctx;
         this.canvas = canvas; 
 
-        this.ctx.font = '48px fantasy';
+        
         this.ctx.textAlign = 'center';
         
         this.hitboxes = hitboxes;
@@ -108,7 +108,14 @@ class Game {
 
     endGame () {
 
+        this.ctx.font = '48px fantasy';
+        this.ctx.fillStyle = "red"
+        this.ctx.shadowColor = '#8b0000';
+        this.ctx.shadowBlur = 8
         this.ctx.fillText("GAME OVER", this.canvas.width / 2, this.canvas.height / 2);
+
+        this.ctx.shadowColor = '#787878';
+        this.ctx.fillStyle = "black"
         this.ctx.fillText("Click Restart", this.canvas.width / 2, this.canvas.height / 1.5);
 
 
@@ -227,6 +234,11 @@ class Game {
         player.animate(this.hitboxes, this.character, this.gameSound);
 
         this.score++;
+
+        this.ctx.shadowColor = '#383838';
+        this.ctx.shadowBlur = 2;
+        this.ctx.fillStyle = "black";
+        this.ctx.font = "30px serif"
         this.ctx.fillText(`Score: ${this.score}`, this.canvas.width / 2, (this.canvas.height / 3) + 10);
     
         this.gameSpeed += 0.005;

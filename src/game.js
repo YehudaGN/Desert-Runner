@@ -119,6 +119,11 @@ class Game {
 
         this.music.pause();
         this.music.currentTime = 0;
+        if (this.gameSound) {
+            let over = new Audio("./src/assets/audio/game-over.wav");
+            over.volume = .2
+            over.play();
+        }
     }
     
 

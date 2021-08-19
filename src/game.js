@@ -57,7 +57,7 @@ class Game {
         } else if (rand === 3) {
             return new Crate(canvas.width + 65, canvas.height - platformHeight - 65, this.ctx, this.gameSpeed);
         } else if (rand === 4) {
-            if (this.gameSpeed >= 15) {
+            if (this.gameSpeed >= 22) {
                 return new Tree(canvas.width + 180, canvas.height - platformHeight - 150, this.ctx, this.gameSpeed);
             } else {
                 return new Cactus2(canvas.width + 70, canvas.height - platformHeight - 45, this.ctx, this.gameSpeed);

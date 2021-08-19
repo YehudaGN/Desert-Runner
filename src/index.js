@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const title = new Image(); 
     title.src = "./src/assets/Title/Desert-Runner-8-16-2021.png";
 
-    canvas.height = window.innerHeight / 1.8;
-    canvas.width = window.innerWidth / 2;
-    scene.height = window.innerHeight / 1.8;
-    scene.width = window.innerWidth / 2;
+    canvas.height = window.innerHeight / 1.5;
+    canvas.width = window.innerWidth / 1.8;
+    scene.height = window.innerHeight / 1.5;
+    scene.width = window.innerWidth / 1.8;
 
 
     background.onload = () => {

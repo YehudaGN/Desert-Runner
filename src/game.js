@@ -19,13 +19,6 @@ class Game {
     constructor (ctx, canvas, hitboxes, character, gameSound) {
         this.ctx = ctx;
         this.canvas = canvas; 
-
-        this.gameSpeed = 5;
-
-        this.gameOver = false;
-
-        this.score = 0; 
-        this.highScore = 0;
         
         this.hitboxes = hitboxes;
 

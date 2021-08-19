@@ -16,9 +16,13 @@ let platformHeight = 93;
 
 
 class Game {
-    constructor (ctx, canvas, hitboxes, character, gameSound) {
+    constructor (ctx, canvas, hitboxes, character, gameSound, platform, background) {
+
         this.ctx = ctx;
         this.canvas = canvas; 
+
+        this.ctx.font = '48px fantasy';
+        this.ctx.textAlign = 'center';
         
         this.hitboxes = hitboxes;
 
@@ -30,6 +34,10 @@ class Game {
         this.music.volume = .15;
 
         this.gameSound = gameSound;
+
+        this.platform = platform;
+        this.background = background;
+
     }
 
     spawnObstacle (player) {
@@ -74,6 +82,7 @@ class Game {
 
     start () {
 
+
         if (this.gameSound) {
             this.music.play()
         }
@@ -98,11 +107,9 @@ class Game {
     }
 
     endGame () {
-        let gameOverText = document.getElementById("game-over");
-        gameOverText.innerText = "GAME OVER";
-        
-        let playAgain = document.getElementById("play-again")
-        playAgain.innerText = "Click Restart"
+
+        this.ctx.fillText("GAME OVER", this.canvas.width / 2, this.canvas.height / 2);
+        this.ctx.fillText("Click Restart", this.canvas.width / 2, this.canvas.height / 1.5);
 
 
         let start = document.getElementById("start")
@@ -121,11 +128,7 @@ class Game {
             return 
         }
         
-        let gameOverText = document.getElementById("game-over");
-        gameOverText.innerText = '';
-
-        let playAgain = document.getElementById("play-again")
-        playAgain.innerText = ""
+  
 
         let difficulty = document.getElementById("difficulty");
 
@@ -145,6 +148,7 @@ class Game {
 
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+        
         spawnTimer--;
         if (spawnTimer <= 0) {
             this.spawnObstacle(player);
@@ -215,12 +219,10 @@ class Game {
             obs.move(this.hitboxes);
         }
         
-        
         player.animate(this.hitboxes, this.character, this.gameSound);
 
-        let scoreDisplay = document.getElementById("score-disp")
         this.score++;
-        scoreDisplay.innerText = `Score: ${this.score}`;
+        this.ctx.fillText(`Score: ${this.score}`, this.canvas.width / 2, (this.canvas.height / 3) + 10);
     
         this.gameSpeed += 0.005;
     }

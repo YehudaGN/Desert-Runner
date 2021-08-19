@@ -95,11 +95,7 @@ header button {
 }
 
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-  
-}
+
 
 
 
@@ -107,50 +103,14 @@ header button {
     background-size: 1280px, 600px; 
     position: absolute;
     z-index: 1;
+   
 }
 
 #scene {
     border-radius: 10px;
     box-shadow: 8px 8px 10px 8px darkgray;
+  
    
-}
-
-
-
-#game-over {
-    position: absolute;
-    text-align: center;
-    font-size: 100px;
-
-    top: 28%;
-    font-family: fantasy;
-    color: red;
-    text-shadow: 4px 4px rgb(122, 101, 101);
-}
-
-#play-again {
-    position: absolute;
-    text-align: center;
-    font-size: 100px;
-
-    top: 42%;
-    font-family: fantasy;
-    color: black;
-    text-shadow: 4px 4px rgb(110, 110, 110);
-}
-
-#score-disp {
-    position: absolute;
-    top: 23%;
-    font-size: 25px;
-    font-family: fantasy;
-    text-shadow: 2px 2px lightskyblue;
-}
-
-#title {
-    position: absolute;
-    text-align: center;
-    top: 7%;
 }
 
 .info {
@@ -244,6 +204,12 @@ button:active {
     height: 50px;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    
+}
 
 
 #char-select {
@@ -251,8 +217,8 @@ button:active {
     flex-direction: column;
     gap: 15px;
     position: absolute;
-    left: 16%;
-    top: 12%;
+    left: -11%;
+    top: 1%;
     
 }
 

@@ -22,7 +22,7 @@ class Player {
       this.ctx = ctx;
   
       this.yDir = 0;
-      this.jumpPower = 13;
+      this.jumpPower = 10;
       this.originalHeight = height;
       this.jumping = false;
       this.jumpLength = 0;

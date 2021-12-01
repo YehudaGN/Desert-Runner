@@ -32,21 +32,14 @@ In Desert Runner, users are able to:
 
 In addition, the following is included:
 
-- A "How to Play" instructions modal explaining the rules of the game
+- A "How to Play" instructions dropdown explaining the rules of the game
 
-- A production README
 
-<h1>3. Wireframes</h1>
 
-The screen has a restart button, a How to Play, a difficulty
-indicator, a charactor selector, as well as links to the repo
-and of course the game itself.
-
-![js_wireframe](https://user-images.githubusercontent.com/84539591/129268515-51c80aeb-0f6a-4e01-bd8c-9d1f13298370.png)
 
 <h1>4. Technologies</h1>
 
-I plan on using canvas with no additional API's
+I used canvas with vanilla JS
 
 <h1>5. Implementation Timeline</h1>
 
@@ -59,15 +52,6 @@ Tuesday - 8/17/21 - I will have added dynamic difficulty, randomly appearing obs
 Wednesday - 8/18/21 - I will have added nav links, Instructions, and hunting down potential game breaking bugs
 
 Thursday Morning - 8/19/21 - The final polishing will be done.
-
-<h1> Bonus Features </h1>
-
-Bonus features include: 
-
-- Implementing random terrain generation
-
-- Calculating the increase in difficulty with regards to platforms at different heights so that it will still be playable.
-
 
 
 #Credits 

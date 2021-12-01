@@ -12,6 +12,9 @@ dynamically as the game goes on. There is also a difficulty
 indicator that displays the current difficulty as the game 
 goes on. 
 
+
+<img src='./src/assets/nav/DesertRunner_.png' width='600' />
+
 <h1>2. Functionality and MVPs</h1>
 
 In Desert Runner, users are able to:
@@ -33,9 +36,7 @@ In Desert Runner, users are able to:
 In addition, the following is included:
 
 - A "How to Play" instructions dropdown explaining the rules of the game
-
-
-
+- 
 
 <h1>4. Technologies</h1>
 
